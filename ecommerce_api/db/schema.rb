@@ -10,12 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_01_115910) do
-  create_table "estados", force: :cascade do |t|
-    t.string "nome"
-    t.string "sigla"
+ActiveRecord::Schema[7.0].define(version: 2023_09_01_193259) do
+  create_table "produtos", force: :cascade do |t|
+    t.string "titulo"
+    t.string "descricao"
+    t.float "valor"
+    t.integer "quantidade"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "url_image"
   end
 
 end
