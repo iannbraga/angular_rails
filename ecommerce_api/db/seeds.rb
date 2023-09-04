@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
 #
@@ -8,46 +10,60 @@
 
 produtos = [
   {
-    :titulo => 'Smartphone Samsung Galaxy S21',
-    :descricao => 'O mais recente smartphone da Samsung com câmera de 108MP e tela OLED de 6.2 polegadas.',
-    :valor => 1999.99,
-    :quantidade => 50
+    nome: 'Smartphone Samsung Galaxy S21',
+    valor: 1999.99,
+    quantidade: 50,
+    url_image: 'https://imgs.search.brave.com/6jEbKctUv4iKqUSzOS5o1r_uNrRB2K7aRvGqKT_Vx4I/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjFYSTlJd0RQQ0wu/anBn',
+    marca: 'Samsung',
+    tipo: 'Smartphone'
   },
   {
-    :titulo => 'Notebook Dell XPS 13',
-    :descricao => 'Notebook ultrafino com tela InfinityEdge, processador Intel Core i7 e 16GB de RAM.',
-    :valor => 2499.99,
-    :quantidade => 20
+    nome: 'Notebook Dell XPS 13',
+    valor: 2499.99,
+    quantidade: 20,
+    url_image: 'https://imgs.search.brave.com/i8_DEGtk03oPciwwUilieF-kfgwzbDs_5If82YwIWCg/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NTFUc2lxWTVFbkwu/anBn',
+    marca: 'Dell',
+    tipo: 'Notebook'
   },
   {
-    :titulo => 'Smart TV LG OLED 4K',
-    :descricao => 'TV OLED 4K de 55 polegadas com HDR, som Dolby Atmos e suporte para streaming.',
-    :valor => 1499.99,
-    :quantidade => 30
+    nome: 'Smart TV LG OLED 4K',
+    valor: 1499.99,
+    quantidade: 30,
+    url_image: 'https://imgs.search.brave.com/RFyxg990Led-nqo5KfNJscoB4AFSduUsdMydwLeWa4s/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NDFXajdFWGQ5ZUwu/anBn',
+    marca: 'LG',
+    tipo: 'Smart TV'
   },
   {
-    :titulo => 'Fones de Ouvido Sony WH-1000XM4',
-    :descricao => 'Fones de ouvido com cancelamento de ruído, som de alta qualidade e bateria de longa duração.',
-    :valor => 349.99,
-    :quantidade => 40
+    nome: 'Fones de Ouvido Sony WH-1000XM4',
+    valor: 349.99,
+    quantidade: 40,
+    url_image: 'https://imgs.search.brave.com/SXRt6N4UOs3YDMqU2lladbNaNjXrCVXzI-txsxBVm1s/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzYxTWJGT0llSlRM/LmpwZw',
+    marca: 'Sony',
+    tipo: 'Fones de Ouvido'
   },
   {
-    :titulo => 'Câmera Canon EOS Rebel T7i',
-    :descricao => 'Câmera DSLR com sensor APS-C de 24.2MP e vídeo Full HD.',
-    :valor => 799.99,
-    :quantidade => 15
+    nome: 'Câmera Canon EOS Rebel T7i',
+    valor: 799.99,
+    quantidade: 15,
+    url_image: 'https://imgs.search.brave.com/-VZaAsiqGLE-sfweYHEsJQ6MmFThk110_g_c0cjlLqA/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9tLm1l/ZGlhLWFtYXpvbi5j/b20vaW1hZ2VzL0kv/NjE5dGZ1RklrU0wu/anBn',
+    marca: 'Canon',
+    tipo: 'Câmera'
   },
   {
-    :titulo => 'Console de Jogos Xbox Series X',
-    :descricao => 'Console de última geração da Microsoft com suporte a jogos em 4K e alta taxa de quadros.',
-    :valor => 499.99,
-    :quantidade => 25
+    nome: 'Console de Jogos Xbox Series X',
+    valor: 499.99,
+    quantidade: 25,
+    url_image: 'https://imgs.search.brave.com/VzxdpaKc3eu_cnukIC0SF8qiBHBn3unaYXo3fPR0jMs/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzgxWjF4QnM2R29M/LmpwZw',
+    marca: 'Microsoft',
+    tipo: 'Console de Jogos'
   },
   {
-    :titulo => 'Impressora HP LaserJet Pro',
-    :descricao => 'Impressora laser monocromática de alta velocidade para uso profissional.',
-    :valor => 299.99,
-    :quantidade => 10
+    nome: 'Impressora HP LaserJet Pro',
+    valor: 299.99,
+    quantidade: 10,
+    url_image: 'https://m.media-amazon.com/images/I/61Djm6Rig9L._AC_SY450_.jpg',
+    marca: 'HP',
+    tipo: 'Impressora'
   }
 ]
 

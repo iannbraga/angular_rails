@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
+# produtos_controller.rb
 class ProdutosController < ApplicationController
-  before_action :set_produto, only: %i[ show update destroy ]
+  before_action :set_produto, only: %i[show update destroy]
 
   # GET /produtos
   def index
@@ -39,13 +42,14 @@ class ProdutosController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_produto
-      @produto = Produto.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def produto_params
-      params.require(:produto).permit(:titulo, :descricao, :valor, :quantidade, :url_image)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_produto
+    @produto = Produto.find(params[:id])
+  end
+
+  # Only allow a list of trusted parameters through.
+  def produto_params
+    params.require(:produto).permit(:nome, :valor, :marca, :tipo, :url_image)
+  end
 end

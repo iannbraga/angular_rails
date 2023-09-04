@@ -19,16 +19,16 @@ export class ProdutoService {
     return this.http.get<Produto>(`${this.baseURL}/produtos/${id}.json`);
   }
 
-  save(estado: Produto): Observable<Produto> {
-    return this.http.post<Produto>(`${this.baseURL}/produtos.json`, estado);
+  save(produto: Produto): Observable<Produto> {
+    return this.http.post<Produto>(`${this.baseURL}/produtos.json`, produto);
   }
 
-  update(estado: Produto): Observable<Produto> {
-    return this.http.put<Produto>(`${this.baseURL}/produtos/${estado.id}.json`, estado );
+  update(produto: Produto): Observable<Produto> {
+    return this.http.put<Produto>(`${this.baseURL}/produtos/${produto.id}.json`, produto );
   }
 
-  delete(estado: Produto): Observable<any> {
-    return this.http.delete<Produto>(`${this.baseURL}/produtos/${estado.id}.json`);
+  delete(produto: Produto): Observable<any> {
+    return this.http.delete<Produto>(`${this.baseURL}/produtos/${produto.id}.json`);
   }
 
 }

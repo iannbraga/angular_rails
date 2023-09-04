@@ -1,7 +1,8 @@
 export class Produto {
   id!: number
-  titulo!: string
-  descricao!: string
+  nome!: string
+  marca!: string
+  tipo!: string
   valor!: number
   quantidade!: number
   url_image!: string

@@ -9,7 +9,7 @@ import { ProdutoService } from 'src/app/services/produto.service';
 })
 export class ProdutoListComponent implements OnInit {
 
-  tableColumns: string[] = ['id', 'url_image', 'titulo', 'descricao', 'valor', 'quantidade']
+  tableColumns: string[] = ['id', 'url_image', 'nome', 'tipo', 'marca', 'quantidade', 'valor']
   produtos: Produto[] = []
 
   constructor(private produtoService: ProdutoService) {}
