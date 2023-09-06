@@ -4,3 +4,58 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.fontsize-5{
+  font-size: 14px;
+}
+.fontsize-4{
+  font-size: 20px;
+}
+.fontsize-3{
+  font-size: 26px;
+}
+.fontsize-2{
+  font-size: 32px;
+}
+.fontsize-1{
+  font-size: 48px;
+}
+
+
+/* Classe para tornar o componente invisível em telas pequenas */
+.invisivel-sm {
+    display: none;
+  }
+  
+  /* Adicionando uma regra de mídia para telas pequenas (até 768px) */
+  @media (max-width: 768px) {
+    .invisivel-sm {
+      display: none !important; /* Use !important para garantir que essa regra prevaleça */
+    }
+  }
+  
+  /* Classe para tornar o componente invisível em telas médias */
+  .invisivel-md {
+    display: none;
+  }
+  
+  /* Adicionando uma regra de mídia para telas médias (de 769px a 992px) */
+  @media (min-width: 769px) and (max-width: 992px) {
+    .invisivel-md {
+      display: none !important;
+    }
+  }
+  
+  /* Classe para tornar o componente invisível em telas grandes */
+  .invisivel-lg {
+    display: none;
+  }
+  
+  /* Adicionando uma regra de mídia para telas grandes (acima de 992px) */
+  @media (min-width: 993px) {
+    .invisivel-lg {
+      display: none !important;
+    }
+  }
+  

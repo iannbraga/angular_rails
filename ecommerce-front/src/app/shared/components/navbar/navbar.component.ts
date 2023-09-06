@@ -7,5 +7,4 @@ import { MatSidenav } from '@angular/material/sidenav';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  
 }
