@@ -1,0 +1,82 @@
+<div class="form-container">
+    <mat-card>
+        <mat-card-content>
+            <form [formGroup]="formGroup">
+
+                <mat-form-field appearance="outline" class="full-width-input">
+                    <mat-label>Nome</mat-label>
+                    <input matInput type="text" formControlName="nome" />
+                    <mat-error *ngIf="formGroup.get('nome') &&
+                formGroup.get('nome')?.invalid &&
+                formGroup.get('nome')?.touched">
+                        nome é obrigatória.
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="full-width-input">
+                    <mat-label>Marca</mat-label>
+                    <input matInput type="text" formControlName="marca" />
+                    <mat-error *ngIf="formGroup.get('marca') &&
+                formGroup.get('marca')?.invalid &&
+                formGroup.get('marca')?.touched">
+                        marca é obrigatória.
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="full-width-input">
+                    <mat-label>Tipo</mat-label>
+                    <input matInput type="text" formControlName="tipo" />
+                    <mat-error *ngIf="formGroup.get('tipo') &&
+                formGroup.get('tipo')?.invalid &&
+                formGroup.get('tipo')?.touched">
+                        tipo é obrigatória.
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="full-width-input">
+                    <mat-label>Valor</mat-label>
+                    <input matInput type="number" formControlName="valor" />
+                    <mat-error *ngIf="formGroup.get('valor') &&
+                formGroup.get('valor')?.invalid &&
+                formGroup.get('valor')?.touched">
+                        valor é obrigatória.
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="full-width-input">
+                    <mat-label>Quantidade</mat-label>
+                    <input matInput type="number" formControlName="quantidade" />
+                    <mat-error *ngIf="formGroup.get('quantidade') &&
+                formGroup.get('quantidade')?.invalid &&
+                formGroup.get('quantidade')?.touched">
+                        quantidade é obrigatória.
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline" class="full-width-input">
+                    <mat-label>Url da Imagem</mat-label>
+                    <input matInput type="text" formControlName="url_image" />
+                    <mat-error *ngIf="formGroup.get('url_image') &&
+                formGroup.get('url_image')?.invalid &&
+                formGroup.get('url_image')?.touched">
+                        Url da imagem é obrigatória.
+                    </mat-error>
+                </mat-form-field>
+
+            </form>
+        </mat-card-content>
+
+        <mat-card-actions>
+            <button mat-raised-button color="primary" (click)="salvar()" [disabled]="formGroup.invalid">
+                Salvar
+            </button>
+            <button mat-raised-button *ngIf="formGroup?.get('id')?.value" color="warn" (click)="excluir()"
+                [disabled]="formGroup.invalid">
+                Excluir
+            </button>
+            <button mat-raised-button routerLink="/table">
+                Cancelar
+            </button>
+        </mat-card-actions>
+    </mat-card>
+</div>
