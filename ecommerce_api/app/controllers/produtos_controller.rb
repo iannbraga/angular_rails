@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# produtos_controller.rb
+# app/controllers/produtos_controller.rb
 class ProdutosController < ApplicationController
   before_action :set_produto, only: %i[show update destroy]
 
@@ -50,6 +50,6 @@ class ProdutosController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def produto_params
-    params.require(:produto).permit(:nome, :valor, :marca, :tipo, :url_image)
+    params.require(:produto).permit(:nome, :valor, :quantidade, :url_image, :marca, :tipo)
   end
 end

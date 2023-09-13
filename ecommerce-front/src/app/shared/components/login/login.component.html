@@ -1,25 +1,26 @@
 <div class="form-container">
     <mat-card>
+        <mat-card-title class="centered-toolbar" style="padding: 25px;">Login</mat-card-title>
         <mat-card-content>
             <form [formGroup]="formGroup">
 
                 <mat-form-field appearance="outline" class="full-width-input">
-                    <mat-label>Nome</mat-label>
-                    <input matInput type="text" formControlName="nome" />
-                    <mat-error *ngIf="formGroup.get('nome') &&
-                formGroup.get('nome')?.invalid &&
-                formGroup.get('nome')?.touched">
-                        nome é obrigatória.
+                    <mat-label>Email</mat-label>
+                    <input matInput type="text" formControlName="email" />
+                    <mat-error *ngIf="formGroup.get('email') &&
+                formGroup.get('email')?.invalid &&
+                formGroup.get('email')?.touched">
+                        email é obrigatória.
                     </mat-error>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline" class="full-width-input">
-                    <mat-label>Marca</mat-label>
-                    <input matInput type="text" formControlName="marca" />
-                    <mat-error *ngIf="formGroup.get('marca') &&
-                formGroup.get('marca')?.invalid &&
-                formGroup.get('marca')?.touched">
-                        marca é obrigatória.
+                    <mat-label>Senha</mat-label>
+                    <input matInput type="text" formControlName="senha" />
+                    <mat-error *ngIf="formGroup.get('senha') &&
+                formGroup.get('senha')?.invalid &&
+                formGroup.get('senha')?.touched">
+                        senha é obrigatória.
                     </mat-error>
                 </mat-form-field>
 
@@ -27,12 +28,8 @@
         </mat-card-content>
 
         <mat-card-actions>
-            <button mat-raised-button color="primary" (click)="salvar()" [disabled]="formGroup.invalid">
+            <button mat-raised-button color="primary" (click)="login()" [disabled]="formGroup.invalid">
                 Salvar
-            </button>
-            <button mat-raised-button *ngIf="formGroup?.get('id')?.value" color="warn" (click)="excluir()"
-                [disabled]="formGroup.invalid">
-                Excluir
             </button>
             <button mat-raised-button routerLink="/table">
                 Cancelar

@@ -70,3 +70,25 @@ produtos = [
 produtos.each do |produto|
   Produto.create(produto)
 end
+
+usuarios = [
+  {
+    "email": 'adm@adm.com',
+    "senha": 'adm',
+    "perfil": 'adm'
+  },
+  {
+    "email": 'gestor@gestor',
+    "senha": 'gestor',
+    "perfil": 'gestor'
+  },
+  {
+    "email": 'cliente@cliente.com',
+    "senha": 'cliente',
+    "perfil": 'cliente'
+  }
+]
+
+usuarios.each do |usuario|
+  Usuario.create(usuario)
+end

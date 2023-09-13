@@ -1,49 +1,44 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { UsuarioService } from 'src/app/services/usuario.service';
+import { Usuario } from 'src/app/model/usuario';
+import { AutenticacaoService } from 'src/app/services/autenticacao.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-
-export class Usuario {
-  email!: string
-  senha!: string
-}
-
 export class LoginComponent {
   formGroup: FormGroup;
 
   constructor(private formBuilder: FormBuilder,
-    private usuarioService: UsuarioService,
+    private autenticacaoService: AutenticacaoService,
     private router: Router,
     private activatedRoute: ActivatedRoute) {
 
     const usuario: Usuario = this.activatedRoute.snapshot.data['usuario'];
 
     this.formGroup = formBuilder.group({
-      nome: [(usuario && usuario.email) ? usuario.email : '', Validators.required],
-      marca: [(usuario && usuario.senha) ? usuario.senha : '', Validators.required]
+      id: [(usuario && usuario.id) ? usuario.id : null],
+      email: [(usuario && usuario.email) ? usuario.email : '', Validators.required],
+      senha: [(usuario && usuario.senha) ? usuario.senha : '', Validators.required]
     })
   }
 
-  logar() {
+  login() {
     if (this.formGroup.valid) {
       const usuario = this.formGroup.value;
-      if (usuario.email == '' || usuario.senha == '') {
-        this.usuarioService.login(usuario).subscribe({
-          next: (usuario) => {
+      if (usuario.id == null) {
+        this.autenticacaoService.login(usuario.email, usuario.senha).subscribe({
+          next: (usuarioCadastrado) => {
             this.router.navigateByUrl('/table');
           },
           error: (err) => {
-            console.log('Erro ao incluir' + JSON.stringify(err));
+            console.log('Erro ao autenticar' + JSON.stringify(err));
           }
         });
       }
     }
   }
-
 }
